@@ -25,7 +25,7 @@ euler = np.loadtxt("A01_XY_100_nm.ang", skiprows=1, usecols=(0,1,2))
 ori = orix.quaternion.Orientation.from_euler(np.deg2rad(euler),
                                    orix.quaternion.symmetry.D6)
 ori = ~ori # Might need to remove this.
-ori = ori.reshape((450,450))
+ori = ori.reshape(450,450)
 
 ckey = plot.IPFColorKeyTSL(D6)
 
@@ -52,7 +52,6 @@ fig.subplots_adjust(wspace=0.01)
 plt.show()
 plt.clf()
 
-import pdb;pdb.set_trace()
 ori = ori.map_into_symmetry_reduced_zone()
 
 D = ori.get_distance_matrix(lazy=True, chunk_size=20)
