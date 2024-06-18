@@ -4,7 +4,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from visualization import plot_3d_volume
-
+print("Need to randomly sample a beta orientation as well!!!!!!1")
 class EllipsoidNet(nn.Module):
     def __init__(self):
         super(EllipsoidNet, self).__init__()
